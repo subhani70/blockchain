@@ -28,6 +28,7 @@ services:
     ports:
       - "8546:8545"
       - "30307:30306"
+      - "8552:8552"
     environment:
       - NODE_ID=2
       - HTTP_PORT=8545
@@ -35,10 +36,13 @@ services:
       - NETWORK_ID=1234567
       - UNLOCK_ADDRESS=0x18073Ba5476b50148ff1f5187a32Afc8F39Eb7Ff
       - MINER_ADDRESS=0x18073Ba5476b50148ff1f5187a32Afc8F39Eb7Ff
+      - BOOTNODE_URL=enode://125a5acdfe482d13ddd97ce510b70d374550b4919563f13def8f8e651888d8acd550726b2d1dec27dd0b591713ec34e7dcf22f2a7d8514c0a9e63428ffdaf640@geth-node1:30306
     volumes:
       - node2_data:/app/data
     networks:
       - geth-network
+    depends_on:
+      - geth-node1
     restart: unless-stopped
 
 volumes:

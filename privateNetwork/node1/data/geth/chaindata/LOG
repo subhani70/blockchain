@@ -178,3 +178,15 @@
 10:42:27.855416 db@open done T·99.5317ms
 11:22:39.502105 db@close closing
 11:22:39.511270 db@close done T·9.1647ms
+=============== Oct 28, 2025 (IST) ===============
+15:21:07.274623 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:21:07.296431 version@stat F·[1 1] S·1MiB[551KiB 1MiB] Sc·[0.25 0.01]
+15:21:07.296431 db@open opening
+15:21:07.296960 journal@recovery F·1
+15:21:07.299043 journal@recovery recovering @42
+15:21:07.319079 memdb@flush created L0@44 N·4388 S·241KiB "\x00~\xd1..\a\x8f\xd2,v49197":"\xd2\xef^..\xef\xead,v49193"
+15:21:07.321700 version@stat F·[2 1] S·1MiB[792KiB 1MiB] Sc·[0.50 0.01]
+15:21:07.335784 db@janitor F·5 G·0
+15:21:07.335784 db@open done T·39.3529ms
+15:28:04.459964 db@close closing
+15:28:04.460709 db@close done T·744.9µs

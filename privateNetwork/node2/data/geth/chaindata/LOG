@@ -169,3 +169,16 @@
 10:42:36.124663 table@remove removed @27
 11:22:39.509686 db@close closing
 11:22:39.511270 db@close done T·1.5841ms
+=============== Oct 28, 2025 (IST) ===============
+15:21:18.030001 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:21:18.050591 version@stat F·[0 1] S·935KiB[0B 935KiB] Sc·[0.00 0.01]
+15:21:18.050591 db@open opening
+15:21:18.051106 journal@recovery F·1
+15:21:18.053958 journal@recovery recovering @38
+15:21:18.071060 memdb@flush created L0@41 N·11 S·554B "eth..\xec\xed\xdc,v36446":"unc..own,v36447"
+15:21:18.073550 version@stat F·[1 1] S·936KiB[554B 935KiB] Sc·[0.25 0.01]
+15:21:18.088270 db@janitor F·5 G·1
+15:21:18.088270 db@janitor removing table-37
+15:21:18.088270 db@open done T·37.679ms
+15:27:56.896809 db@close closing
+15:27:56.897322 db@close done T·513µs
