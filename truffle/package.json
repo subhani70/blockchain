@@ -1,0 +1,34 @@
+{
+  "name": "truffle-did-registry",
+  "version": "1.0.0",
+  "description": "Truffle project for EthrDIDRegistry smart contract deployment to private PoA blockchain",
+  "main": "truffle-config.js",
+  "scripts": {
+    "compile": "truffle compile",
+    "migrate": "truffle migrate --network poa",
+    "test": "truffle test --network poa",
+    "console": "truffle console --network poa",
+    "deploy": "npm run compile && npm run migrate",
+    "clean": "truffle clean",
+    "reset": "truffle migrate --reset --network poa"
+  },
+  "dependencies": {
+    "truffle": "^5.11.5",
+    "@truffle/hdwallet-provider": "^2.1.15"
+  },
+  "devDependencies": {
+    "ganache-cli": "^6.12.2"
+  },
+  "keywords": [
+    "ethereum",
+    "truffle",
+    "smart-contracts",
+    "did",
+    "docker"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

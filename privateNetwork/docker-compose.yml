@@ -1,0 +1,50 @@
+services:
+  geth-node1:
+    build:
+      context: .
+      dockerfile: Dockerfile.node1
+    container_name: geth-node1
+    ports:
+      - "8545:8545"
+      - "30306:30306"
+    environment:
+      - NODE_ID=1
+      - HTTP_PORT=8545
+      - P2P_PORT=30306
+      - NETWORK_ID=1234567
+      - UNLOCK_ADDRESS=0xb37937c534fD26E5bF41AD58C83C24d94A1BE6B5
+      - MINER_ADDRESS=0xb37937c534fD26E5bF41AD58C83C24d94A1BE6B5
+    volumes:
+      - node1_data:/app/data
+    networks:
+      - geth-network
+    restart: unless-stopped
+
+  geth-node2:
+    build:
+      context: .
+      dockerfile: Dockerfile.node2
+    container_name: geth-node2
+    ports:
+      - "8546:8545"
+      - "30307:30306"
+    environment:
+      - NODE_ID=2
+      - HTTP_PORT=8545
+      - P2P_PORT=30306
+      - NETWORK_ID=1234567
+      - UNLOCK_ADDRESS=0x18073Ba5476b50148ff1f5187a32Afc8F39Eb7Ff
+      - MINER_ADDRESS=0x18073Ba5476b50148ff1f5187a32Afc8F39Eb7Ff
+    volumes:
+      - node2_data:/app/data
+    networks:
+      - geth-network
+    restart: unless-stopped
+
+volumes:
+  node1_data:
+  node2_data:
+
+networks:
+  geth-network:
+    driver: bridge

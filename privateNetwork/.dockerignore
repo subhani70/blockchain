@@ -1,0 +1,26 @@
+# Ignore existing blockchain data
+node1/data/geth/chaindata/
+node1/data/geth/lightchaindata/
+node1/data/geth/nodes/
+node1/data/geth/triecache/
+node1/data/geth/transactions.rlp
+node1/data/geth/LOCK
+node1/data/geth/LOG
+node1/data/geth/CURRENT*
+node1/data/geth/MANIFEST-*
+
+node2/data/geth/chaindata/
+node2/data/geth/lightchaindata/
+node2/data/geth/nodes/
+node2/data/geth/triecache/
+node2/data/geth/transactions.rlp
+node2/data/geth/LOCK
+node2/data/geth/LOG
+node2/data/geth/CURRENT*
+node2/data/geth/MANIFEST-*
+
+# Ignore git and other files
+.git
+.gitignore
+README.md
+*.log

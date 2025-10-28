@@ -1,20 +1,22 @@
 module.exports = {
   networks: {
-    // Ganache/Local development network
-    development: {
+    // Private PoA Blockchain - Node 1 (Primary)
+    poa: {
       host: "127.0.0.1",
       port: 8545,
-      network_id: "*",
+      network_id: 1234567,
+      from: "0xb37937c534fD26E5bF41AD58C83C24d94A1BE6B5", // Node 1 account
       gas: 8000000,
-      gasPrice: 20000000000
+      gasPrice: 2000000000,
+      websockets: false
     },
     
-    // Your Private PoA Blockchain
-    poa: {
-      host: "172.16.10.117",
-      port: 8545,
+    // Private PoA Blockchain - Node 2 (Alternative)
+    poa2: {
+      host: "127.0.0.1",
+      port: 8546,
       network_id: 1234567,
-      from: "0xb37937c534fD26E5bF41AD58C83C24d94A1BE6B5", // Your account address
+      from: "0x18073Ba5476b50148ff1f5187a32Afc8F39Eb7Ff", // Node 2 account
       gas: 8000000,
       gasPrice: 2000000000,
       websockets: false
