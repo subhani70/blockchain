@@ -1,7 +1,7 @@
 module.exports = {
   networks: {
     // Private PoA Blockchain - Node 1 (Primary)
-    poa: {
+    development: {
       host: "127.0.0.1",
       port: 8545,
       network_id: 1234567,
@@ -10,9 +10,9 @@ module.exports = {
       gasPrice: 2000000000,
       websockets: false
     },
-    
+
     // Private PoA Blockchain - Node 2 (Alternative)
-    poa2: {
+    development2: {
       host: "127.0.0.1",
       port: 8546,
       network_id: 1234567,
@@ -22,7 +22,7 @@ module.exports = {
       websockets: false
     }
   },
-  
+
   compilers: {
     solc: {
       version: "0.8.19",
