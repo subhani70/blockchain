@@ -6,7 +6,13 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:build": "docker build -t did-wallet-backend .",
+    "docker:run": "docker run -d --name did-wallet-backend -p 5000:5000 did-wallet-backend",
+    "docker:start": "./start-docker.sh",
+    "docker:stop": "docker-compose down",
+    "docker:logs": "docker-compose logs -f backend",
+    "docker:clean": "docker-compose down && docker rmi did-wallet-backend"
   },
   "keywords": [
     "DID",
