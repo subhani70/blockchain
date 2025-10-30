@@ -1,36 +1,31 @@
-# Use older Geth image that supports PoW
+# Use stable Geth base image
 FROM ethereum/client-go:v1.13.15
 
 # Set working directory
 WORKDIR /app
 
-# Install additional tools
-RUN apk add --no-cache curl jq
+# Install utilities
+RUN apk add --no-cache bash jq
 
-# Copy genesis file
-COPY privateblock.json /app/genesis.json
+# Copy only configuration and scripts
+COPY privateblock.json ./genesis.json
+COPY node2/password.txt ./password.txt
+COPY node2/start-node.sh ./start-node.sh
 
-# Create data directories
-RUN mkdir -p /app/data/geth /app/data/keystore
+# Permissions
+RUN chmod +x ./start-node.sh
 
-# Copy node2 specific files
-COPY node2/data/keystore/ /app/data/keystore/
-COPY node2/password.txt /app/password.txt
+# Expose required ports
+EXPOSE 8546 30307 30307/udp
 
-# Create startup script
-COPY start-node.sh /app/start-node.sh
-RUN chmod +x /app/start-node.sh
+# Environment variables (optional defaults)
+ENV NETWORK_ID=1234567 \
+    DATA_DIR=/app/data \
+    GENESIS_FILE=/app/genesis.json \
+    PASSWORD_FILE=/app/password.txt \
+    HTTP_PORT=8546 \
+    P2P_PORT=30307 \
+    UNLOCK_ADDRESS=0x18073Ba5476b50148ff1f5187a32Afc8F39Eb7Ff
 
-# Expose ports
-EXPOSE 8545 30306
-
-# Set environment variables for node2
-ENV NODE_ID=2
-ENV HTTP_PORT=8545
-ENV P2P_PORT=30306
-ENV NETWORK_ID=1234567
-ENV UNLOCK_ADDRESS=0x18073Ba5476b50148ff1f5187a32Afc8F39Eb7Ff
-ENV MINER_ADDRESS=0x18073Ba5476b50148ff1f5187a32Afc8F39Eb7Ff
-
-# Start the node
-ENTRYPOINT ["sh", "/app/start-node.sh"]
+# Entrypoint
+ENTRYPOINT ["bash", "/app/start-node.sh"]

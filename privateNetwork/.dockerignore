@@ -24,3 +24,13 @@ node2/data/geth/MANIFEST-*
 .gitignore
 README.md
 *.log
+data/
+keystore/
+geth/
+logs/
+# Ignore blockchain data and private keys
+node1/data/
+node2/data/
+**/geth/
+**/keystore/
+**/logs/
