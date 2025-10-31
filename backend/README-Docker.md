@@ -37,7 +37,7 @@ docker build -t did-wallet-backend .
 docker run -d \
   --name did-wallet-backend \
   -p 5000:5000 \
-  -e RPC_URL=http://172.16.10.117:8545 \
+  -e RPC_URL=http://13.232.1.197:8545 \
   -e CHAIN_ID=1337 \
   -e REGISTRY_ADDRESS=0xYourRegistryAddress \
   -e PRIVATE_KEY=0xYourPrivateKey \
@@ -62,7 +62,7 @@ docker-compose down
 |----------|-------------|---------|----------|
 | `NODE_ENV` | Node environment | `production` | No |
 | `PORT` | Server port | `5000` | No |
-| `RPC_URL` | Blockchain RPC URL | `http://172.16.10.117:8545` | Yes |
+| `RPC_URL` | Blockchain RPC URL | `http://13.232.1.197:8545` | Yes |
 | `CHAIN_ID` | Blockchain chain ID | `1337` | Yes |
 | `REGISTRY_ADDRESS` | EthrDIDRegistry contract address | - | Yes |
 | `PRIVATE_KEY` | Private key for transactions | - | Yes |
