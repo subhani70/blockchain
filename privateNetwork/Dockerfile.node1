@@ -11,6 +11,7 @@ RUN apk add --no-cache bash jq
 COPY privateblock.json ./genesis.json
 COPY node1/password.txt ./password.txt
 COPY node1/start-node.sh ./start-node.sh
+COPY node1/data/keystore /app/data/keystore
 
 # Set permissions
 RUN chmod +x ./start-node.sh

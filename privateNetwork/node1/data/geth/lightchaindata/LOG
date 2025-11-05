@@ -1,8 +1,8 @@
-=============== Aug 14, 2025 (IST) ===============
-10:57:12.268776 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-10:57:12.271308 db@open opening
-10:57:12.272307 version@stat F·[] S·0B[] Sc·[]
-10:57:12.272307 db@janitor F·2 G·0
-10:57:12.272307 db@open done T·999.6µs
-10:57:12.288658 db@close closing
-10:57:12.288658 db@close done T·0s
+=============== Nov 5, 2025 (IST) ===============
+11:54:05.441068 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:54:05.457586 db@open opening
+11:54:05.457586 version@stat F·[] S·0B[] Sc·[]
+11:54:05.461728 db@janitor F·2 G·0
+11:54:05.461728 db@open done T·4.142ms
+11:54:05.511380 db@close closing
+11:54:05.511913 db@close done T·532.8µs
