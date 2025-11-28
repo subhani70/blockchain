@@ -3,13 +3,11 @@ set -e
 
 echo "🚀 Initializing Node 1..."
 
-# Initialize blockchain only if not already initialized
 if [ ! -d "./data/geth" ]; then
   echo "⛏️  Running genesis initialization..."
   geth --datadir ./data init /app/genesis.json
 fi
 
-# Detect container IP within overlay network
 NODE_IP=$(hostname -i | awk '{print $1}')
 echo "🌐 Detected container IP: $NODE_IP"
 
@@ -17,7 +15,7 @@ echo "🔹 Starting Node 1..."
 exec geth --datadir ./data \
   --port 30306 \
   --networkid 1234567 \
-  --nat extip:$NODE_IP \
+  --nat extip:${NODE_IP} \
   --http --http.addr 0.0.0.0 --http.port 8545 \
   --http.api "eth,net,web3,personal,miner,admin" \
   --http.corsdomain "*" \
